@@ -27,10 +27,10 @@ int main(void)
 	  	  case s0:
 	  	  {
 	  		  sensor();//membaca sensor, apakah ada uang masuk
-	  		  if(C5==3){//apakah uang yang masuk koin 500
+	  		  if(C5==1){//apakah uang yang masuk koin 500
 	  			  stateku = s1;//lanjut ke state 1
 	  		  }
-	  		  else if(C1==3){//atau apakah uang yang masuk koin 1000
+	  		  else if(C1==1){//atau apakah uang yang masuk koin 1000
 	  			  stateku = s1;//lanjut ke state 1
 	  		  }
 	  		  break;
@@ -39,13 +39,13 @@ int main(void)
 	  	case s1:
 	  	{
 	  		sensor();//membaca sensor, apakah ada uang yang masuk
-	  		if(C5==6){//apakah uang yang masuk koin 500
+	  		if(C5==2){//apakah uang yang masuk koin 500
 	  		  stateku = s2;//lanjut ke state 2
 	  		}
-	  		else if(C5==3&&C1==3){//apakah koin yang masuk 1000 dan sebelumnya koin 500
+	  		else if(C5==1&&C1==1){//apakah koin yang masuk 1000 dan sebelumnya koin 500
 	  			stateku = s3;//lanjut state 3
 	  		}
-	  		else if (C1==6){//apakah yang masuk koin 1000
+	  		else if (C1==2){//apakah yang masuk koin 1000
 	  			 stateku = s3;//lanjut state 3
 	  		}
 	  		break;
@@ -54,7 +54,7 @@ int main(void)
 	  	case s2:
 	  	{
 	  		sensor();//membaca sensor, apakah ada uang masuk
-	  		if(C5==9){//apakah uang yang masuk koin 500
+	  		if(C5==3){//apakah uang yang masuk koin 500
 	  			stateku = s3;//lanjut state 3
 	  		}
 	  		break;
@@ -63,7 +63,7 @@ int main(void)
 	  	case s3:
 	  	{
 	  		Permen;//keluarkan permen (led indikator)
-	  		if (C1==6)//apakah banyak koin 1000 ada 2 koin
+	  		if (C1==2)//apakah banyak koin 1000 ada 2 koin
 	  		{
 	  			Permen;//keluarkan permen (led indikator)
 	  			Kembalian;//keluarkan kembalian (led indikator)
@@ -84,13 +84,13 @@ int main(void)
 void sensor(void){
 	if (HAL_GPIO_ReadPin(K5_GPIO_Port, K5_Pin)==GPIO_PIN_SET){//baca pin koin 500
 		HAL_Delay(50);//delay bouncing
-		if (HAL_GPIO_ReadPin(K5_GPIO_Port, K5_Pin)==GPIO_PIN_SET){//apakah masih terbaca
+		if (HAL_GPIO_ReadPin(K5_GPIO_Port, K5_Pin)==GPIO_PIN_RESET){//apakah pindah state
 			++C5;//nilai koin 500 bertambah
 		}
 	}
 	if (HAL_GPIO_ReadPin(K1_GPIO_Port, K1_Pin)==GPIO_PIN_SET){//baca pin koin 1000
 			HAL_Delay(50);//delay bouncing
-			if (HAL_GPIO_ReadPin(K1_GPIO_Port, K1_Pin)==GPIO_PIN_SET){//apakah masih terbaca
+			if (HAL_GPIO_ReadPin(K1_GPIO_Port, K1_Pin)==GPIO_PIN_RESET){//apakah pindah state
 			++C1;//nilai koin 1000 bertambah
 			}
 		}
