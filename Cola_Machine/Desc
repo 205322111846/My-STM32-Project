@@ -1,0 +1,6 @@
+Code ini merupakan code dari project membuat Cola Machine. Dimana mesin tersebut memiliki kriteria sebagai berikut :
+1. Minuman berharga 1000
+2. Mesin dapat menerima uang 500 dan 1000
+3. User dapat membatalkan pembelian dengan menekan tombol batal
+4. User dapat melanjutkan pembelian dengan menekan tombol proses
+5. Jika uang yang dimasukkan melebihi harga, maka uang yang dimasukkan akan otomatis keluar
