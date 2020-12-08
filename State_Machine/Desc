@@ -1,0 +1,6 @@
+Code ini merupakan code dari project State Machine sederhana yang diimplementasikan pada Traffic Light. Traffic Light tersebut bekerja sebagai berikut :
+1. Lampu merah menyala selama 3detik
+2. Lampu merah kuning menyala selama 2detik
+3. Lampu hijau menyala selama 7detik
+4. Lampu kuning menyala selama 1detik
+Dan lampu akan otomatis kembali ke warna merah jika tombol yang tersedia ditekan
