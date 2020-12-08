@@ -1,0 +1,4 @@
+Code ini merupakan code dari project vending machine. Dimana vending machine tersebut memiliki kriteria sebagai berikut :
+1. Harga vending machine 1500
+2. Vending machine dapat menerima uang 500 dan 1000
+3. Vending machine akan memberi kembalian jika uang yang dimasukkan lebih dari harga
