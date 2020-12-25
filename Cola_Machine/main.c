@@ -35,6 +35,10 @@ int main(void)
 		  if(C500()){
 			  stateku=s2;
 		  }
+		  if(C1000()){
+			  kbl_500();
+			  stateku=s2;
+		  }
 		  if(batal()){
 			  kbl_500();
 			  stateku=s0;
