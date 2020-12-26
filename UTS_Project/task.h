@@ -1,10 +1,3 @@
-/*
- * task.h
- *
- *  Created on: Oct 25, 2019
- *       Author: aji
- */
-
 #ifndef TASK_H_
 #define TASK_H_
 
