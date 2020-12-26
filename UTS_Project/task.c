@@ -321,12 +321,6 @@ void sensor3(void)
 
 void kirim_lcd(void)
 {
-	///////////////////////////////////////////////////////////////////LCD ATAS
-	//if(lapA<totlap){
-		//lcd_send_cmd(0x80);
-		//sprintf(buffer,"%d%d:%d%d:%d%dA%d=%d%d:%d%d",(mm/10),(mm%10),(dd/10),(dd%10),(ms/10),(ms%10),(lapA),(mm1/10),(mm1%10),(dd1/10),(dd1%10));
-		//lcd_send_string(buffer);
-	//}
 	if(lapA<totlap){
 			lcd_send_cmd(0x80);
 			sprintf(buffer,"      %d%d:%d%d:%d%d",(mm/10),(mm%10),(dd/10),(dd%10),(ms/10),(ms%10));
@@ -369,28 +363,7 @@ void kirim_lcd(void)
 			sprintf(buffer,"  C = FINISH %d%d:%d%d",(dd1/10),(dd1%10),(ms/10),(ms%10));
 			lcd_send_string(buffer);
 		}
-	///////////////////////////////////////////////////////////////////LCD BAWAH
-	//if(lapB<totlap && lapC<totlap){
-		//lcd_send_cmd(0x0c);
-		//sprintf(buffer,"B%d=%d%d:%d%dC%d=%d%d:%d%d",(lapB),(mm2/10),(mm2%10),(dd2/10),(dd2%10),(lapC),(mm3/10),(mm3%10),(dd3/10),(dd3%10));
-		//lcd_send_string(buffer);
-	//}
-	//else if(lapB<totlap && lapC>=totlap){
-		//lcd_send_cmd(0xc0);
-		//sprintf(buffer,"B%d=%d%d:%d%dC=FINISH",(lapB),(mm2/10),(mm2%10),(dd2/10),(dd2%10));
-		//lcd_send_string(buffer);
-	//}
-	//else if(lapB>=totlap && lapC<totlap){
-		//lcd_send_cmd(0xc0);
-		//sprintf(buffer,"B=FINISHC%d=%d%d:%d%d",(lapC),(mm3/10),(mm3%10),(dd3/10),(dd3%10));
-		//lcd_send_string(buffer);
-	//}
-	//else{
-		//lcd_send_cmd(0xc0);
-		//lcd_send_string("B=FINISHC=FINISH");
-	//}
-
-	///////////////////////////////////////////////////////////////////STOP Timer2
+	
 	if(lapA>=totlap && lapB>=totlap && lapC>=totlap)HAL_TIM_Base_Stop_IT(&htim2);
 }
 
